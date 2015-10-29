@@ -15,6 +15,9 @@
 		B63394671BDFF05D00ADBE0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B63394651BDFF05D00ADBE0D /* LaunchScreen.storyboard */; };
 		B63394721BDFF05D00ADBE0D /* Tableview_EventTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B63394711BDFF05D00ADBE0D /* Tableview_EventTests.m */; };
 		B633947D1BDFF05D00ADBE0D /* Tableview_EventUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B633947C1BDFF05D00ADBE0D /* Tableview_EventUITests.m */; };
+		B63394901BDFF37F00ADBE0D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B633948F1BDFF37F00ADBE0D /* DetailViewController.m */; };
+		B63394931BDFFDB500ADBE0D /* MyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B63394921BDFFDB500ADBE0D /* MyObject.m */; };
+		B63394961BE0324900ADBE0D /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B63394951BE0324900ADBE0D /* MyTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		B63394781BDFF05D00ADBE0D /* Tableview EventUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tableview EventUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B633947C1BDFF05D00ADBE0D /* Tableview_EventUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tableview_EventUITests.m; sourceTree = "<group>"; };
 		B633947E1BDFF05D00ADBE0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B633948E1BDFF37F00ADBE0D /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		B633948F1BDFF37F00ADBE0D /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		B63394911BDFFDB500ADBE0D /* MyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyObject.h; sourceTree = "<group>"; };
+		B63394921BDFFDB500ADBE0D /* MyObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyObject.m; sourceTree = "<group>"; };
+		B63394941BE0324900ADBE0D /* MyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
+		B63394951BE0324900ADBE0D /* MyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,11 +114,17 @@
 				B633945B1BDFF05D00ADBE0D /* AppDelegate.m */,
 				B633945D1BDFF05D00ADBE0D /* ViewController.h */,
 				B633945E1BDFF05D00ADBE0D /* ViewController.m */,
+				B633948E1BDFF37F00ADBE0D /* DetailViewController.h */,
+				B633948F1BDFF37F00ADBE0D /* DetailViewController.m */,
 				B63394601BDFF05D00ADBE0D /* Main.storyboard */,
 				B63394631BDFF05D00ADBE0D /* Assets.xcassets */,
 				B63394651BDFF05D00ADBE0D /* LaunchScreen.storyboard */,
 				B63394681BDFF05D00ADBE0D /* Info.plist */,
 				B63394571BDFF05D00ADBE0D /* Supporting Files */,
+				B63394911BDFFDB500ADBE0D /* MyObject.h */,
+				B63394921BDFFDB500ADBE0D /* MyObject.m */,
+				B63394941BE0324900ADBE0D /* MyTableViewCell.h */,
+				B63394951BE0324900ADBE0D /* MyTableViewCell.m */,
 			);
 			path = "Tableview Event";
 			sourceTree = "<group>";
@@ -276,6 +291,9 @@
 				B633945F1BDFF05D00ADBE0D /* ViewController.m in Sources */,
 				B633945C1BDFF05D00ADBE0D /* AppDelegate.m in Sources */,
 				B63394591BDFF05D00ADBE0D /* main.m in Sources */,
+				B63394961BE0324900ADBE0D /* MyTableViewCell.m in Sources */,
+				B63394901BDFF37F00ADBE0D /* DetailViewController.m in Sources */,
+				B63394931BDFFDB500ADBE0D /* MyObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +519,7 @@
 				B63394831BDFF05D00ADBE0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B63394841BDFF05D00ADBE0D /* Build configuration list for PBXNativeTarget "Tableview EventTests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +528,7 @@
 				B63394861BDFF05D00ADBE0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B63394871BDFF05D00ADBE0D /* Build configuration list for PBXNativeTarget "Tableview EventUITests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +537,7 @@
 				B63394891BDFF05D00ADBE0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MyTableViewCell.h
 //  Tableview Event
 //
 //  Created by Hongjin Su on 10/27/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface MyTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *MyImage;
 
 @end
-
