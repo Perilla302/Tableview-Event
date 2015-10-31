@@ -11,6 +11,8 @@
 #import "MyObject.h"
 #import "MyTableViewCell.h"
 
+# define GET_PIC @"http://183.82.48.194:8484/YoutubeUploader/Pics/"
+
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableview_event;
 @property (strong, nonatomic) NSMutableArray *array_event;
@@ -24,6 +26,7 @@
     [super viewDidLoad];
     [self DetailCall];
     // Do any additional setup after loading the view, typically from a nib.
+    //[_tableview_event reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -88,7 +91,8 @@
             objStructure.StartTime = [NSString stringWithFormat:@"%@", [dict objectForKey:@"StartTime"]];
             objStructure.Venue = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Venue"]];
             NSString *Videolink = [NSString stringWithFormat:@"%@", [dict objectForKey:@"Videolink"]];
-            objStructure.Videolink = [Videolink stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+            NSString *link = [Videolink stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+            objStructure.Videolink = [link stringByReplacingOccurrencesOfString:@"\"" withString:@""];
             objStructure.Views = [[dict objectForKey:@"Views"] longValue];
             
             // To get the link for the image
@@ -103,9 +107,10 @@
             [_array_event addObject:objStructure];
         }
     }
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        [_tableview_event reloadData];
-//    });
+    //NSLog([_array_path description]);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [_tableview_event reloadData];
+    });
 }
 
 
@@ -134,16 +139,18 @@
 //    //NSLog(@"Y %ld", (long)indexPath.row);
     
     MyObject *obj_myClass = [_array_event objectAtIndex:indexPath.row];
-    myCell.textLabel.text = [NSString stringWithFormat:@"%@", obj_myClass.EventTitle];
+    myCell.label_eventTitle.text = [NSString stringWithFormat:@"%@", obj_myClass.EventTitle];
     
     
     myCell.MyImage.image = nil;
     // Top priority
-    dispatch_queue_t que = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0ul);
+    dispatch_queue_t que = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
     // Image is the first priority
     dispatch_async(que, ^{
         
-        NSString *urlPath = [_array_path objectAtIndex:indexPath.row];
+        
+        NSString *urlPath=[NSString stringWithFormat:@"%@%@", GET_PIC, obj_myClass.Videolink];
+        //NSString *urlPath = [_array_path objectAtIndex:indexPath.row];
         NSURL *url = [NSURL URLWithString:urlPath];
         
         NSData *dataImage = [NSData dataWithContentsOfURL:url];
@@ -153,7 +160,8 @@
             MyTableViewCell *cell =(id)[tableView cellForRowAtIndexPath:indexPath];
             if (cell) {
                 cell.MyImage.image = imageFromWeb;
-                [_tableview_event reloadData];
+                //NSLog(@"image updated");
+                //[_tableview_event reloadData];
             }
             
         });

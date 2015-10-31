@@ -10,5 +10,6 @@
 
 @interface MyTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *MyImage;
+@property (weak, nonatomic) IBOutlet UILabel *label_eventTitle;
 
 @end
